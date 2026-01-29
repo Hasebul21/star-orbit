@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: star-orbit-container
-        image: hasebul21/star-orbit-app:latest # Use your actual Docker Hub image
+        image: hasebul21/star-orbit-app:v1 # Use your actual Docker Hub image
         ports:
         - containerPort: 80

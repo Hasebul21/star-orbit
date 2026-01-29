@@ -4,10 +4,11 @@ metadata:
   name: star-orbit-service
   namespace: default
 spec:
+  type: NodePort  # Change this from ClusterIP/LoadBalancer
   selector:
     app: star-orbit
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
-  type: ClusterIP # Use ClusterIP for local testing, or LoadBalancer if using Minikube/Docker Desktop
+      port: 80        # The port the service listens on inside the cluster
+      targetPort: 80  # The port your container is listening on
+      nodePort: 30001 # The port you will use in your browser (30000-32767)
